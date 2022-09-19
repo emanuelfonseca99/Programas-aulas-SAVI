@@ -9,7 +9,7 @@ Miguel Riem Oliveira <mriem@ua.pt>
 # Exemplos
 
 Projeto Atlas - Festival Nacional de Robótica 2010
-- https://www.youtube.com/watch?v=-19j6cUR40M
+- https://www.youtube.com/watch?v=GowKB6aooLI
 
 Projeto Atlas - Processamento imagem
 - https://www.youtube.com/watch?v=dH-ebo8rh2w
