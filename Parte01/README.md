@@ -3,10 +3,6 @@ Parte 1 - SAVI
 Miguel Riem Oliveira <mriem@ua.pt>
 2022-2023
 
-// Instruções especiais para o asciidoc usar icons no output
-:icons: html5
-:iconsdir: /etc/asciidoc/images/icons 
-
 #Sumário
 
  - Introdução
