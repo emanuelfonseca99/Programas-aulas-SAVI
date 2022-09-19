@@ -1,4 +1,5 @@
-Sistemas Avançados de Visão Industrial
+**Sistemas Avançados de Visão Industrial (SAVI)**
+
 Universidade de Aveiro
 
 Miguel Riem Oliveira <mriem@ua.pt>
