@@ -1,5 +1,5 @@
 Parte 1 - SAVI
-=============
+
 Miguel Riem Oliveira <mriem@ua.pt>
 2022-2023
 
