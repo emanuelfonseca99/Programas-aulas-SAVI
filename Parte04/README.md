@@ -5,7 +5,7 @@ Miguel Riem Oliveira <mriem@ua.pt>
 
 # Sumário
 
-- Processamento de vídeo
+- Seguimento.
 
 # Exercícios
 
