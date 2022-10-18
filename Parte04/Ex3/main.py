@@ -71,11 +71,11 @@ def main():
         detections = []
         for bbox in bboxes: 
             x1, y1, w, h = bbox
-            detection = Detection(x1, y1, w, h, image_gray, id=detection_counter)
+            detection = Detection(x1, y1, w, h, image_gray, id=detection_counter, stamp=stamp)
             detection_counter += 1
             detection.draw(image_gui)
             detections.append(detection)
-            cv2.imshow('detection ' + str(detection.id), detection.image  )
+            # cv2.imshow('detection ' + str(detection.id), detection.image  )
 
         # ------------------------------------------
         # For each detection, see if there is a tracker to which it should be associated
@@ -84,17 +84,33 @@ def main():
             for tracker in trackers: # cycle all trackers
                 tracker_bbox = tracker.detections[-1]
                 iou = detection.computeIOU(tracker_bbox)
-                print('IOU( T' + str(tracker.id) + ' D' + str(detection.id) + ' ) = ' + str(iou))
+                # print('IOU( T' + str(tracker.id) + ' D' + str(detection.id) + ' ) = ' + str(iou))
                 if iou > iou_threshold: # associate detection with tracker 
-                    tracker.addDetection(detection)
+                    tracker.addDetection(detection, image_gray)
 
+        # ------------------------------------------
+        # Track using template matching
+        # ------------------------------------------
+        for tracker in trackers: # cycle all trackers
+            last_detection_id = tracker.detections[-1].id
+            print(last_detection_id)
+            detection_ids = [d.id for d in detections]
+            if not last_detection_id in detection_ids:
+                print('Tracker ' + str(tracker.id) + ' Doing some tracking')
+                tracker.track(image_gray)
+
+        # ------------------------------------------
+        # Deactivate Tracker if no detection for more than T
+        # ------------------------------------------
+        for tracker in trackers: # cycle all trackers
+            tracker.updateTime(stamp)
 
         # ------------------------------------------
         # Create Tracker for each detection
         # ------------------------------------------
-        if frame_counter == 0:
-            for detection in detections:
-                tracker = Tracker(detection, id=tracker_counter)
+        for detection in detections:
+            if not detection.assigned_to_tracker:
+                tracker = Tracker(detection, id=tracker_counter, image=image_gray)
                 tracker_counter += 1
                 trackers.append(tracker)
     
@@ -106,13 +122,15 @@ def main():
         for tracker in trackers:
             tracker.draw(image_gui)
 
+            # win_name= 'T' + str(tracker.id) + ' template'
+            # cv2.imshow(win_name, tracker.template)
 
-        for tracker in trackers:
-            print(tracker)
+        # for tracker in trackers:
+            # print(tracker)
 
         cv2.imshow(window_name,image_gui) # show the image
 
-        if cv2.waitKey(0) == ord('q'):
+        if cv2.waitKey(50) == ord('q'):
             break
 
         frame_counter += 1
