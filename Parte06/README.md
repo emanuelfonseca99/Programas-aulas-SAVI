@@ -43,4 +43,6 @@ Utilizando as imagens da pasta machu pichu, faça a estimativa da transformaçã
 
 ![Image](docs/stitched.jpg)
 
-## Exercício 5 - Stitch the images
+## Exercício 6 - Stitch images of castle
+
+Faça o stitching das imagens da pasta _castle_. Pode ser necessário adaptar o algoritmo de stitching desenvolvido no exercício anterior.
