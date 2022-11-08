@@ -17,7 +17,7 @@ Faça os exercícios do tutorial de OpenCV sobre [Feature Detection and Descript
 
 ## Exercício 2 - Compute features
 
-Carregue as imagens na pasta , calcule as _features_ do tipo **sift**, limitando o número de pontos chave a 500.
+Carregue as imagens na pasta santorini, calcule as _features_ do tipo **sift**, limitando o número de pontos chave a 500.
 
 Visualize as features encontradas em ambas as imagens.
 
@@ -29,7 +29,7 @@ Visualize as features encontradas em ambas as imagens.
 
 Usando as imagens da pasta castle, faça a associação das _features_ encontradas no exercício anterior, e represente os matches. 
 
-![Image](docs/all_matches.jpg)
+![Image](docs/castle_all_matches.png)
 
 ## Exercício 4 - Filter matches
 
@@ -42,3 +42,5 @@ Utilize o teste de rácio de David Lowe para filtrar matches pouco confiáveis c
 Utilizando as imagens da pasta machu pichu, faça a estimativa da transformação geométrica entre imagens com a função **findHomography**, e depois aplique essa transformação de modo a fundir as duas imagens numa só.
 
 ![Image](docs/stitched.jpg)
+
+## Exercício 5 - Stitch the images
