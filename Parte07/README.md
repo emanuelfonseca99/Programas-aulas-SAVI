@@ -49,3 +49,4 @@ Adapte o exercício anterior para utilizar um modelo de uma [função sinusoidal
 
 
 ..
+Adding a close example.
