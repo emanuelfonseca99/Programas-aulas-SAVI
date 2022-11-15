@@ -47,6 +47,9 @@ Esta função deve substituir a geração aleatória dos parâmetros da reta.
 
 Adapte o exercício anterior para utilizar um modelo de uma [função sinusoidal](https://yoshiwarabooks.org/trig/The-General-Sinusoidal-Function.html).
 
+#TODO #9
+
+#TODO
 
 ..
 Adding a close example.
